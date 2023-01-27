@@ -1,0 +1,115 @@
+getgenv().SecureMode = true
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Sun Script Hub | v1.0.0.0",
+   LoadingTitle = "",
+   LoadingSubtitle = "By Sun",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, 
+      FileName = "Sun Script Hub"
+   },
+   Discord = {
+      Enabled = true,
+      Invite = "TYMWRGa5mm", 
+      RememberJoins = true 
+   },
+   KeySystem = true,
+   KeySettings = {
+      Title = "Sun Hub",
+      Subtitle = "Key System",
+      Note = "Join the discord (discord.gg/TYMWRGa5mm)",
+      FileName = "Sun Hub Key",
+      SaveKey = false,
+      GrabKeyFromSite = false,
+      Key = "UjAioS90AWjfdF1RG2DfgsisFujafjfsui3kf9ias"
+   }
+})
+
+Rayfield:Notify({
+   Title = "Sun Script Hub | Notification",
+   Content = "Join Our Discord Server! Link: discord.gg/TYMWRGa5mm",
+   Duration = 6.5,
+   Image = 4483362458,
+   Actions = { 
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("discord.gg/TYMWRGa5mm")
+      end
+   },
+},
+})
+
+local ScriptsTab = Window:CreateTab("Scripts", 4483362458) -- Title, Image
+local Section = ScriptsTab:CreateSection("Lots Of Different Scripts For You To Choose!")
+
+local InfiniteYield = ScriptsTab:CreateButton({
+   Name = "Infinite Yield",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+   end,
+})
+
+local BtoolsRemake = ScriptsTab:CreateButton({
+   Name = "Btools FE",
+   Callback = function()
+   loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
+   end,
+})
+
+local HatHub = ScriptsTab:CreateButton({
+   Name = "Hat Hub v2 (Need Specific Hats For It To Work.)",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/6tshcUd2"))()
+   end,
+})
+
+local AimBotTab = Window:CreateTab("AimBot", 4483362458)
+local Section2 = AimBotTab:CreateSection("Best AimBot Script Ever! (Works On Any Game!)")
+
+local AimBot = AimBotTab:CreateButton({
+   Name = "AimBot",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))();
+   end,
+})
+
+local MiscTab = Window:CreateTab("Misc", 4483362458)
+local ColorPicker = MiscTab:CreateColorPicker({
+    Name = "Color Picker",
+    Color = Color3.fromRGB(255,255,255),
+    Flag = "ColorPicker1", 
+    Callback = function(Value)
+        
+        
+    end
+})
+
+local Slider = MiscTab:CreateSlider({
+   Name = "Change WalkSpeed",
+   Range = {16, 350},
+   Increment = 1,
+   Suffix = "WalkSpeed",
+   CurrentValue = 16,
+   Flag = "Slider1",
+   Callback = function(SpeedValue)
+       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SpeedValue
+   end,
+})
+
+local JumpSlider = MiscTab:CreateSlider({
+    Name = "Change Jump Height",
+    Range = {6, 30},
+    Increment = 1,
+    Suffix = "Jump Height",
+    CurrentValue = 6,
+    Flag = "Slider2",
+    Callback = function(JumpValue)
+        game.Players.LocalPlayer.Character.Humanoid.JumpHeight = JumpValue
+
+    end,
+ })
+
+Rayfield:LoadConfiguration()
